@@ -17,7 +17,7 @@ spark.sparkContext.setLogLevel("ERROR")
 df = spark.read.format("csv")\
     .option("header", "True")\
     .option("inferSchema", "True")\
-    .csv("abfs://landing@dljaime.dfs.core.windows.net/*.csv")
+    .csv("abfs://landing@jaimedatalake.dfs.core.windows.net/*.csv")
 
 # imprime os dados lidos da raw
 print("\nImprime os dados lidos da lading:")
@@ -31,11 +31,11 @@ print(df.printSchema())
 print("\nEscrevendo os dados lidos da raw para parquet na processing zone...")
 df.write.format("parquet")\
         .mode("overwrite")\
-        .save("abfs://processing@dljaime.dfs.core.windows.net/df-formatado.parquet")
+        .save("abfs://processing@jaimedatalake.dfs.core.windows.net/df-formatado.parquet")
 
 # lendo arquivos parquet
 df_parquet = spark.read.format("parquet")\
-    .load("abfs://processing@dljaime.dfs.core.windows.net/df-formatado.parquet")
+    .load("abfs://processing@jaimedatalake.dfs.core.windows.net/df-formatado.parquet")
 
 # imprime os dados lidos em parquet
 print("\nImprime os dados lidos em parquet da processing zone")
@@ -63,7 +63,7 @@ print("\nEscrevendo os dados Agregados na Curated Zone...")
 # converte os dados processados para parquet e escreve na curated zone
 df_sql.write.format("parquet")\
     .mode("overwrite")\
-    .save("abfs://curated@dljaime.dfs.core.windows.net/df-Dados-Agregados.parquet")
+    .save("abfs://curated@jaimedatalake.dfs.core.windows.net/df-Dados-Agregados.parquet")
 
 
 spark.stop()
