@@ -17,12 +17,12 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
 
 ### Etapas do Projeto
 
-1. Foi Criado um datalake  utilizando o Azure Store com estruta abaixo:
+1. Foi Criado uma Azure Storage Acount onde foi criado um datalake com estruta abaixo:
 
 <ul>
   <li>Bancket(landing) - Landing zone ou Zona de Pouso(dados em formato bruto)</li>
   <li>Bancket(processing) - Processing zone(dados pre-processados)</li>
-  <li>Bancket(cureted) - Cureted zone(Dados limpos, agregados e prontos para análises)</li>  
+  <li>Bancket(curated) - Cureted zone(Dados limpos, agregados e prontos para análises)</li>  
 </ul> 
 2.Foi realizado o upload dos arquivos de dados na zona de pouso(landing), extraídos do kaggle
 
@@ -33,14 +33,16 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
   <li>T201604PDPI+BNFT.csv</li>   
 </ul> 
 
-3. Foi criado um cluster spark no Azure HdInsinght 
+3. Foi criada Identity Manager e concedido acesso de woner do data lake
+4. Foi criado um cluster spark no Azure HdInsinght 
 
-4. Foram realizadas a limpeza, preprocessamento e conversão para o formato parquet, visando melhorar a performance nas proximas etapas do processo. O resultado(df-formatado.parquet) desse processo foi gravado na Proessing zone.
+5. Fi coiada a aplicação para o nó master do cluster e utilizado spark-submit para executa-la
+6. N aplicação foram excutadas as seguinte oprações:
+  - Foi realizadas uma pequena limpeza, preprocessamento e conversão para o formato parquet, visando melhorar a performance nas proximas etapas do processo. O resultado(df-formatado.parquet) desse processo foi gravado na Proessing zone.
+  - Foi realiada a leitura dos dados em formato parquet e criada a view Dados_Sql para permitir exploração dos mesmos via SQL.
 
-5. Foi realiada a leitura dos dados em formato parquet e criada a view Dados_Sql para permitir exploração dos mesmos via SQL.
+  - Foi aplicada agragação nos dados da view Dados_Sql e gravado o resultado na Curated zone em formato parquet.(df-Dados-Agregados.parquet)
 
-6. Foi aplicada agragação nos dados da view Dados_Sql e gravado o resultado na Cureted zone em formato parquet.(df-Dados-Agregados.parquet)
-
-7. Foi utiizado o notebook abaixo para realiza o processamento dos dados.
-<https://github.com/jaimesilvads/databriks/blob/main/SparckComDatabriks.ipynb>
+7. Foi utiizado o script abaixo para realiza o processamento dos dados.
+<https://github.com/jaimesilvads/SparkAzureHdInsinght/blob/main/pyspark-hdinsight.py>
 
