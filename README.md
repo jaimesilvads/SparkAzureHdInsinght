@@ -24,8 +24,9 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
   <li>Bancket(processing) - Processing zone(dados pre-processados)</li>
   <li>Bancket(curated) - Cureted zone(Dados limpos, agregados e prontos para análises)</li>  
 </ul> 
-2.Foi realizado o upload dos arquivos de dados na zona de pouso(landing), extraídos do kaggle
+2.Foi realizado o upload dos arquivos de dados na zona de pouso(landing), utilizando o Azure Storage Explorer.
 
+<p align="center"><img src="./images/AzureStorageExlorer.png" width="500"></p>
 <ul>
   <li>T201601PDPI+BNFT.csv</li>
   <li>T201602PDPI+BNFT.csv</li>
