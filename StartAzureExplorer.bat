@@ -1,0 +1,1 @@
+"C:\Users\francisco.silva\AppData\Local\Programs\Microsoft Azure Storage Explorer\StorageExplorer.exe" --ignore-certificate-errors

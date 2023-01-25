@@ -1,5 +1,5 @@
 # Importamdo as bibliotecas
-
+import os.path
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
@@ -7,7 +7,7 @@ from pyspark.sql.functions import *
 spark = SparkSession \
     .builder \
     .appName("job-1-spark-hdinsight") \
-    .config("spark.sql.warehouse.dir", abspath('spark-warehouse')) \
+    .config("spark.sql.warehouse.dir", os.path.abspath('spark-warehouse')) \
     .getOrCreate()
 
 # definindo o método de logging da aplicação
