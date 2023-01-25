@@ -27,12 +27,7 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
 2.Foi realizado o upload dos arquivos de dados na zona de pouso(landing), utilizando o Azure Storage Explorer.
 
 <p align="center"><img src="./images/AzureStorageExlorer.png" width="500"></p>
-<ul>
-  <li>T201601PDPI+BNFT.csv</li>
-  <li>T201602PDPI+BNFT.csv</li>
-  <li>T201603PDPI+BNFT.csv</li>
-  <li>T201604PDPI+BNFT.csv</li>   
-</ul> 
+
 <p align="center"><img src="./images/landing.png" width="500"></p>
 
 3. Foi criada Identity Manager e concedido acesso de woner do data lake
