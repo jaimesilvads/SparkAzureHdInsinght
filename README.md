@@ -32,6 +32,7 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
   <li>T201603PDPI+BNFT.csv</li>
   <li>T201604PDPI+BNFT.csv</li>   
 </ul> 
+<p align="center"><img src="./images/landing.png" width="500"></p>
 
 3. Foi criada Identity Manager e concedido acesso de woner do data lake
 4. Foi criado um cluster spark no Azure HdInsinght 
@@ -39,9 +40,11 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
 5. Fi coiada a aplicação para o nó master do cluster e utilizado spark-submit para executa-la
 6. N aplicação foram excutadas as seguinte oprações:
   - Foi realizadas uma pequena limpeza, preprocessamento e conversão para o formato parquet, visando melhorar a performance nas proximas etapas do processo. O resultado(df-formatado.parquet) desse processo foi gravado na Proessing zone.
+<p align="center"><img src="./images/processing.png" width="500"></p>
   - Foi realiada a leitura dos dados em formato parquet e criada a view Dados_Sql para permitir exploração dos mesmos via SQL.
 
   - Foi aplicada agragação nos dados da view Dados_Sql e gravado o resultado na Curated zone em formato parquet.(df-Dados-Agregados.parquet)
+  <p align="center"><img src="./images/curated.png" width="500"></p>
 
 7. Foi utiizado o script abaixo para realiza o processamento dos dados.
 <https://github.com/jaimesilvads/SparkAzureHdInsinght/blob/main/pyspark-hdinsight.py>
