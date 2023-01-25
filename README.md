@@ -7,7 +7,7 @@
 ## Projeto Engenharia de dados com Azure HdInsinght
 
 
-<p align="center"><img src="./imagens/Marketecture.svg" width="500"></p>
+<p align="center"><img src="./images/Hdinsight.jpg" width="500"></p>
 
 __*Foi Crianda uma estrutura de data lake no Azure Store*__
 
