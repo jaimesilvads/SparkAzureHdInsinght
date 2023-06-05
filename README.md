@@ -34,7 +34,7 @@ O projeto consiste em criar um data lake no Azure Store, fazer upload de dados p
 4. Foi criado um cluster spark no Azure HdInsinght 
 
 5. Fi coiada a aplicação para o nó master do cluster e utilizado spark-submit para executa-la
-6. N aplicação foram excutadas as seguinte oprações:
+6. Na aplicação foram excutadas as seguinte operações:
   - Foi realizadas uma pequena limpeza, preprocessamento e conversão para o formato parquet, visando melhorar a performance nas proximas etapas do processo. O resultado(df-formatado.parquet) desse processo foi gravado na Proessing zone.
 <p align="center"><img src="./images/processing.png" width="500"></p>
   - Foi realiada a leitura dos dados em formato parquet e criada a view Dados_Sql para permitir exploração dos mesmos via SQL.
